@@ -1,26 +1,33 @@
+## Reference
+https://github.com/akadouri/osm2pgsql-docker-quickstart/blob/main/osm2pgsql/osm-importer.sh
+
 ## Download osm data files:
-  - https://download.geofabrik.de
-  - Example (Israel): 
-    - https://download.geofabrik.de/asia/israel-and-palestine-latest.osm.pbf
-    - or run the script ```download-israel-pbf.sh```
+OSM data files can be downloaded from [osm2pgsql Manual](https://download.geofabrik.de)
 
-## Instructions on how to install and run osm2pgsql
-- see: https://osm2pgsql.org/doc/manual.html for details.
-- sudo apt update && sudo apt install osm2pgsql (can we run this in docker?)
+	For Israel data run: download-israel-pbf.sh
 
+## Build a docker image with osm2pgsql
+```osm2pgsql``` is a the tool for importing OpenStreetMap data into a PostgreSQL database.
 
-## prepare the pos
-Before you can import any OSM data into a database, you need a database.
-+ connect to postgres using psql
-+ run the following psql commands:
-	1. create user osmuser;
-	2. create database osm encoding=UTF8 owner=osmuser;
-	3. CREATE EXTENSION postgis;
-	4. CREATE EXTENSION hstore;
+You can build a docker image with osm2pgsql right from here:
 
-- TODO: Tuning the PostgreSQL Server (see postgresql.conf)
+	cd osm2pgsql && docker build -t osm2pgsql .
+
+See https://osm2pgsql.org/doc/manual.html for more details on osm2pgsql.
 
 
-- Running osm2pgsql:
+## PostgreSQL Server
+In this procedure we use a clean instance of PostgreSQL Server with ```postgis``` extention running inside a docker container.
+
+Tunning the PostgreSQL Server in a production system (see: [osm2pgsql Manual](https://download.geofabrik.de))
+
+	Run: run-pgsql.sh
+
+
+## Preparing a database
+Before you can import any OSM data into a database, you need to prepare a database:
+- Run ```init-db.sh```
+
+## Running osm2pgsql
 	osm2pgsql -c ./osm.pbf/lebanon-latest.osm.pbf -H localhost -P 5432 -U postgres
 
