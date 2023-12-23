@@ -15,7 +15,7 @@ You can build a docker image with osm2pgsql right from here:
 
 	cd osm2pgsql && docker build -t osm2pgsql .
 
-See https://osm2pgsql.org/doc/manual.html for more details on osm2pgsql.
+See [osm2pgsql Manual](https://osm2pgsql.org/doc/manual.html) for more details on osm2pgsql.
 
 
 ## PostgreSQL Server
