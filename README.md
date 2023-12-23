@@ -21,11 +21,11 @@ See [osm2pgsql Manual](https://osm2pgsql.org/doc/manual.html) for more details o
 ## PostgreSQL Server
 In this procedure we use a clean instance of PostgreSQL Server with ```postgis``` extention running inside a docker container.
 
-Run the following script to start PostgreSQL Server inside a docker container:
+Run the following script to start the container:
 
 	postgis.sh
 
-See the [this](https://osm2pgsql.org/doc/manual.html#tuning-the-postgresql-server) for tunning the PostgreSQL Server in a production system.
+See the [this](https://osm2pgsql.org/doc/manual.html#tuning-the-postgresql-server) for details on tunning the PostgreSQL Server in a production system.
 
 ## Preparing a database
 Before you can import any OSM data into a database, you need to prepare a database.
