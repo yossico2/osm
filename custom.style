@@ -241,3 +241,4 @@ node,way    name:etymology:wikidata  text    linear
 node,way    wikipedia                text    linear
 node,way    name:etymology:wikipedia text    linear
 node,way    osm_timestamp            text    linear
+

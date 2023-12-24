@@ -1,6 +1,3 @@
-## Reference
-https://github.com/akadouri/osm2pgsql-docker-quickstart/blob/main/osm2pgsql/osm-importer.sh
-
 ## Download osm data files:
 OSM data files can be downloaded from [geofabrik.de](https://download.geofabrik.de).
 
@@ -41,3 +38,6 @@ Run the following script to import ```israel-and-palestine-latest.osm.pbf``` int
 
 ## Updating data
 TBD
+
+## Reference
+https://github.com/akadouri/osm2pgsql-docker-quickstart/blob/main/osm2pgsql/osm-importer.sh
