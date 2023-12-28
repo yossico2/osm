@@ -2,9 +2,9 @@
 
 function psql() {
 
-    local POSTGRES_IMAGE="postgis"
-    local POSTGRES_HOST="localhost"
-    local POSTGRES_USER="postgres"
+	local POSTGIS_CONTAINER_NAME="postgis"
+    local POSTGRES_HOST=localhost
+    local POSTGRES_USER=postgres
 
 	local psql_command=
 	while [[ $# -gt 0 ]]; do
@@ -21,9 +21,9 @@ function psql() {
 	done
 
     if [ -n "${psql_command}" ]; then
-        $(docker exec ${POSTGRES_IMAGE} psql -h ${POSTGRES_HOST} -U ${POSTGRES_USER} ${psql_command})
+        $(docker exec ${POSTGIS_CONTAINER_NAME} psql -h ${POSTGRES_HOST} -U ${POSTGRES_USER} ${psql_command})
     else
-        docker exec -it ${POSTGRES_IMAGE} psql -h ${POSTGRES_HOST} -U ${POSTGRES_USER}
+        docker exec -it ${POSTGIS_CONTAINER_NAME} psql -h ${POSTGRES_HOST} -U ${POSTGRES_USER}
     fi
 }
 

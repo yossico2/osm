@@ -3,10 +3,14 @@
 function postgis() {
 
 	local POSTGRES_IMAGE="postgis/postgis"
+	local NETWORK=host
+	local POSTGIS_CONTAINER_NAME=postgis
+	local POSTGRES_USER=postgres
+	local POSTGRES_PASSWORD=postgres
 
-	docker run -d --name postgis --network=host \
-		-e POSTGRES_USER=postgres \
-		-e POSTGRES_PASSWORD=postgres \
+	docker run -d --name ${POSTGIS_CONTAINER_NAME} --network=${NETWORK} \
+		-e POSTGRES_USER=${POSTGRES_USER} \
+		-e POSTGRES_PASSWORD=${POSTGRES_PASSWORD} \
 		${POSTGRES_IMAGE} \
 		-c "shared_buffers=1GB" \
 		-c "work_mem=50MB" \

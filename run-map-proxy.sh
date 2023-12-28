@@ -2,12 +2,13 @@
 
 function run-mapproxy-mapnik() {
     local MAPPROXY_MAPNIK_IMAGE="mapproxy-mapnik"
-    local PGSQL_HOST="localhost"
-    local POSTGRES_USER="postgres"
-    local POSTGRES_PASSWORD="postgres"
-    local OSM_DB="osm"
+    local NETWORK=host
+    local PGSQL_HOST=localhost
+    local POSTGRES_USER=postgres
+    local POSTGRES_PASSWORD=postgres
+    local OSM_DB=osm
 
-    docker run --rm --network=host \
+    docker run --rm --network=${NETWORK} \
         -e PGHOST=${PGSQL_HOST} \
         -e PGDATABASE=${OSM_DB} \
         -e PGUSER=${POSTGRES_USER} \

@@ -2,12 +2,13 @@
 
 function run-mapproxy-mapnik() {
     local EXTERNAL_DATA_IMAGE="external-data"
-    local PGSQL_HOST="localhost"
-    local POSTGRES_USER="postgres"
-    local POSTGRES_PASSWORD="postgres"
-    local OSM_DB="osm"
+    local NETWORK=host
+    local PGSQL_HOST=localhost
+    local POSTGRES_USER=postgres
+    local POSTGRES_PASSWORD=postgres
+    local OSM_DB=osm
 
-    docker run --rm --network=host \
+    docker run --rm --network=${NETWORK} \
         -e PGPASSWORD=${POSTGRES_PASSWORD} \
         ${EXTERNAL_DATA_IMAGE} \
         --no-update \
